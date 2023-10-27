@@ -26,6 +26,7 @@ variable "image_id" {
 variable "main_vpc_cidr" {
     description = "CIDR block for the primary Virtual Private Cloud (VPC). This defines the IP address range of the VPC."
     type = string
+    # CIDR block is "10.0.0.0/24", -> [256 IP addresses]
     default = "10.0.0.0/24"
     nullable = false
 }
@@ -33,15 +34,37 @@ variable "main_vpc_cidr" {
 variable "public_subnets" {
     description = "A subnet within a Virtual Private Cloud (VPC) that has a route to the internet."
     type = string
-    default = "10.0.0.128/26"
     nullable = false
+    
+    # IP addresses ranging from "10.0.0.128" to "10.0.0.191", -> [64 IP addresses]
+    default = "10.0.0.128/26"
+    # Reserved Addresses:
+    #   10.0.0.128: Network address
+    #   10.0.0.129: Reserved by AWS for the VPC router
+    #   10.0.0.130: Reserved by AWS for DNS
+    #   10.0.0.131: Reserved by AWS for future use
+    #   10.0.0.191: Broadcast address
+    # Usable IP Addresses:
+    #   10.0.0.132 to 10.0.0.190
+    #   Total Usable: 59
 }
 
 variable "private_subnets" {
     description = "A subnet within a Virtual Private Cloud (VPC) that does NOT have a direct route to the internet."
     type = string
-    default = "10.0.0.192/26"
     nullable = false
+
+    # IP addresses ranging from "10.0.0.192" to "10.0.0.255", -> [64 IP addresses]
+    default = "10.0.0.192/26"
+    # Reserved Addresses:
+    #   10.0.0.192: Network address
+    #   10.0.0.193: Reserved by AWS for the VPC router
+    #   10.0.0.194: Reserved by AWS for DNS
+    #   10.0.0.195: Reserved by AWS for future use
+    #   10.0.0.255: Broadcast address
+    # Usable IP Addresses:
+    #   10.0.0.196 to 10.0.0.254
+    #   Total Usable: 59
 }
 
 # ==================================================================
