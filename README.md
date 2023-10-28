@@ -2,7 +2,7 @@
 
 ![CloudCore Diagram](./docs/model.png)
 
-**CloudCore**: A robust, modular Terraform project for crafting secure and resilient AWS cloud infrastructure. From VPCs to subnets, build your cloud's backbone seamlessly.
+**CloudCore**: Utilize Terraform for efficient AWS infrastructure deployment and rely on Ansible for detailed configurations. CloudCore provides a balanced blend of simplicity and precision for your cloud environment setup.
 
 ---
 
@@ -19,15 +19,17 @@
 
 ## Features
 
-- **Modular Design**: Separate Terraform files for variables, providers, and infrastructure creation.
-- **AWS Focused**: Tailored specifically for AWS resources, including VPCs, subnets, and gateways.
-- **Security Centric**: Emphasizes a secure cloud setup with public and private subnet configurations.
+- **Terraform Provisioning**: Efficiently set up AWS resources including VPCs, subnets, and gateways.
+- **Ansible Configuration**: Utilize Ansible playbooks to ensure consistent configurations across your infrastructure.
+- **Modular Design**: Separate files for variables, providers, infrastructure creation, and configuration.
+- **Security Centric**: Emphasize a secure cloud setup with public and private subnet configurations.
 
 ---
 
 ## Prerequisites
 
 - Terraform v0.12 or newer
+- Ansible 2.x or newer
 - AWS CLI configured with appropriate credentials
 
 ---
@@ -36,4 +38,4 @@
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your_username/CloudCore.git
+   git clone https://github.com/fr3m3n/cloud-core
