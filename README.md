@@ -1,5 +1,6 @@
 # CloudCore
 
+![CloudCore Diagram](./docs/model.png)
 
 **CloudCore**: A robust, modular Terraform project for crafting secure and resilient AWS cloud infrastructure. From VPCs to subnets, build your cloud's backbone seamlessly.
 
