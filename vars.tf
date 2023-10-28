@@ -31,7 +31,7 @@ variable "main_vpc_cidr" {
     nullable = false
 }
 
-variable "public_subnets" {
+variable "public_subnet" {
     description = "A subnet within a Virtual Private Cloud (VPC) that has a route to the internet."
     type = string
     nullable = false
@@ -49,7 +49,7 @@ variable "public_subnets" {
     #   Total Usable: 59
 }
 
-variable "private_subnets" {
+variable "private_subnet" {
     description = "A subnet within a Virtual Private Cloud (VPC) that does NOT have a direct route to the internet."
     type = string
     nullable = false
