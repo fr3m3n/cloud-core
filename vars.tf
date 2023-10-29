@@ -67,4 +67,41 @@ variable "private_subnet" {
     #   Total Usable: 59
 }
 
+
+variable "ec2_public_count" {
+  description = "Number of public EC2 instances to create"
+  type = number
+  default     = 1
+}
+
+variable "ec2_private_count" {
+  description = "Number of private EC2 instances to create"
+  type = number
+  default     = 1
+}
+
+variable "s3_count" {
+  description = "Number of S3 instances to create"
+  type = number
+  default     = 1
+}
+
+variable "ec2_public_name" {
+  description = "Base name for EC2 instances"
+  type = string
+  default     = "ec2-public-cloud-core"
+}
+
+variable "ec2_private_name" {
+  description = "Base name for EC2 instances"
+  type = string
+  default     = "ec2-private-cloud-core"
+}
+
+variable "s3_name" {
+  description = "Base name for S3 instances"
+  type = string
+  default     = "s3-cloud-core"
+}
+
 # ==================================================================
